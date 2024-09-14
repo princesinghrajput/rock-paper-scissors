@@ -1,42 +1,148 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Make the body and the App container take the full height */
+body {
+  background-color: #cfdfff;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 35pt;
   text-align: center;
+  letter-spacing: 5pt;
+  flex-grow: 1; /* Ensures that .App grows to fill the available space */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App img.start {
+  max-width: 250px;
+  cursor: pointer;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.App .Game {
+  display: flex;
+  letter-spacing: 2pt;
+}
+
+.App .Game .Player {
+  flex-grow: 1;
+}
+
+.App .Game .Computer {
+  flex-grow: 1;
+}
+
+.App .Game .Player span {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+.App .Game .Player img {
+  max-width: 200px;
+  margin: 0 15px 15px;
+  display: block;
+}
+
+.App .Game .Player.selected img,
+.App .Game img {
+  max-width: 250px;
+  margin: auto;
+}
+
+.App pre {
+  padding: 10px;
+  text-align: left;
+  font-size: 20pt;
+  letter-spacing: normal;
+}
+
+.App .Results {
+  letter-spacing: normal;
+  font-size: 50pt;
+}
+
+.App .Results img {
+  display: block;
+  max-width: 100px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.App input {
+  font-family: inherit;
+  font-size: 0.75em;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto 25px;
+  padding: 10px;
+  line-height: 1;
+  background-color: #eef;
+  border: 2px solid #ccf;
+  border-radius: 5px;
+  display: block;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #eef;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Media query for devices with a width of 768px or less */
+@media (max-width: 768px) {
+  .App {
+    font-size: 25pt;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App img.start {
+    max-width: 200px;
+  }
+
+  .App .Game {
+    flex-direction: column;
+    font-size: 0.9em;
+  }
+
+  .App .Game .Player img,
+  .App .Game img {
+    max-width: 180px;
+  }
+
+  .App .Results {
+    font-size: 40pt;
+  }
+
+  .App .Results img {
+    max-width: 80px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Media query for devices with a width of 480px or less */
+@media (max-width: 480px) {
+  .App {
+    font-size: 20pt;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .App img.start {
+    max-width: 150px;
+  }
 
-.read-the-docs {
-  color: #888;
+  .App .Game .Player img,
+  .App .Game img {
+    max-width: 150px;
+  }
+
+  .App .Results {
+    font-size: 30pt;
+  }
+
+  .App .Results img {
+    max-width: 60px;
+  }
 }
